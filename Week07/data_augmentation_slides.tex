@@ -1,0 +1,69 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+\title{Data Augmentation for Vision}
+\author{Course Recap}
+\date{Week 07}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{What You Already Know}
+  \begin{itemize}
+    \item Convnets: convolution, pooling, non-linearities, small CNN built from scratch.
+    \item Transfer learning: reuse pretrained backbones, swap the head, freeze/finetune.
+    \item CIFAR-10 example: 32x32 images, 10 classes, trained a simple CNN and a TL model.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What is Data Augmentation?}
+  \begin{itemize}
+    \item Strategy to synthetically expand the training distribution with plausible variations.
+    \item Goal: improve generalization, robustness, and reduce overfitting without new labels.
+    \item Should preserve the semantic label and reflect real-world variability.
+    \item Costs: extra computation and possible slower convergence if too strong.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Augmentations for Images}
+  \begin{itemize}
+    \item Geometric: crop/pad, resize, flip, rotate, affine transform, perspective.
+    \item Color/appearance: brightness/contrast/saturation/hue jitter, grayscale, blur, noise.
+    \item Regularization: Cutout/RandomErasing, MixUp/CutMix (label mixing), elastic distortions.
+    \item Normalization: dataset or ImageNet stats; no augmentation on val/test splits.
+    \item Principles: start conservative, visualize samples, tune strength to domain.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notebook 1: Fundamentals}
+  \begin{itemize}
+    \item Covers transform primitives (tensor conversion, normalization, resize, crop, flip).
+    \item Shows image stats for ImageNet vs CIFAR-10; discusses when to match stats.
+    \item Visualizes single-image transforms to build intuition.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notebook 2: Essential Transformations}
+  \begin{itemize}
+    \item Composes pipelines for ImageNet-style and CIFAR-10-style preprocessing.
+    \item Demonstrates custom transforms (Gaussian noise, Cutout, conditional choice).
+    \item Benchmarks DataLoader performance; highlights workers/pin\_memory knobs.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notebook 3: Complete Pipeline}
+  \begin{itemize}
+    \item Builds train/val/test loaders for CIFAR-10 with augmentation vs no-augmentation baselines.
+    \item Trains a simple CNN, plots loss/accuracy curves, and compares test metrics.
+    \item Visualizes confusion matrices for both runs to inspect per-class performance.
+    \item Encourages experiments: adjust augmentation strength, epochs, LR schedules, seeds.
+  \end{itemize}
+\end{frame}
+
+\end{document}
