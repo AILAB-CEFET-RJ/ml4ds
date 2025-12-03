@@ -211,3 +211,13 @@ Week05/data/cifar-10-python.tar.gz
 Week05/data/cifar-10-batches-py/Week07/data/cifar-10-python.tar.gz
 Week07/data/cifar-10-python.tar.gz
 .DS_Store
+.vscode/settings.json
+Week8/data/cifar-10-batches-py/batches.meta
+Week8/data/cifar-10-batches-py/data_batch_1
+Week8/data/cifar-10-batches-py/data_batch_2
+Week8/data/cifar-10-batches-py/data_batch_3
+Week8/data/cifar-10-batches-py/data_batch_4
+Week8/data/cifar-10-batches-py/data_batch_5
+Week8/data/cifar-10-batches-py/readme.html
+Week8/data/cifar-10-batches-py/test_batch
+Week8/data/cifar-10-python.tar.gz
